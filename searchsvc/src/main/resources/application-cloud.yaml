@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+    apiKey: "${KAFKA_API_KEY}"
+    apiSecret: "${KAFKA_API_SECRET}"

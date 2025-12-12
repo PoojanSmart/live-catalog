@@ -1,0 +1,12 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: catalogsvc
+  datasource:
+    url: jdbc:postgresql://localhost:5432/catalogdb
+    username: livecatalog
+    password: livecatalog
+  jpa:
+    hibernate:
+      ddl-auto: update

@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: livecatalog-postgres
+    environment:
+      POSTGRES_USER: livecatalog
+      POSTGRES_PASSWORD: livecatalog
+      POSTGRES_DB: catalogdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/18/docker
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.2.2
+    container_name: livecatalog-elastic
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+volumes:
+  pgdata:

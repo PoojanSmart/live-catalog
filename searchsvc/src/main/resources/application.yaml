@@ -1,0 +1,7 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: searchsvc
+es:
+  host: http://elastic:9200
